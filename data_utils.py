@@ -44,9 +44,13 @@ class DatasetFromFolder(Dataset):
         self.input_transform = input_transform
         self.target_transform = target_transform
 
+    ## Samuel Changes ##
+    ## Instead of feeding in one channel, feeding 3
     def __getitem__(self, index):
-        image, _, _ = Image.open(self.image_filenames[index]).convert('YCbCr').split()
-        target, _, _ = Image.open(self.target_filenames[index]).convert('YCbCr').split()
+        # image, _, _ = Image.open(self.image_filenames[index]).convert('YCbCr').split()
+        # target, _, _ = Image.open(self.target_filenames[index]).convert('YCbCr').split()
+        image = Image.open(self.image_filenames[index])
+        target = Image.open(self.target_filenames[index])
         if self.input_transform:
             image = self.input_transform(image)
         if self.target_transform:

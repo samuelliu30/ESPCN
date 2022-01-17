@@ -102,10 +102,10 @@ if __name__ == "__main__":
     meter_loss = tnt.meter.AverageValueMeter()
     meter_psnr = PSNRMeter()
 
-    train_loss_logger = VisdomPlotLogger('line', opts={'title': 'Train Loss'})
-    train_psnr_logger = VisdomPlotLogger('line', opts={'title': 'Train PSNR'})
-    val_loss_logger = VisdomPlotLogger('line', opts={'title': 'Val Loss'})
-    val_psnr_logger = VisdomPlotLogger('line', opts={'title': 'Val PSNR'})
+    #train_loss_logger = VisdomPlotLogger('line', opts={'title': 'Train Loss'})
+    #train_psnr_logger = VisdomPlotLogger('line', opts={'title': 'Train PSNR'})
+    #val_loss_logger = VisdomPlotLogger('line', opts={'title': 'Val Loss'})
+    #val_psnr_logger = VisdomPlotLogger('line', opts={'title': 'Val PSNR'})
 
     engine.hooks['on_sample'] = on_sample
     engine.hooks['on_forward'] = on_forward
